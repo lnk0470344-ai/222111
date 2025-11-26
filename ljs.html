@@ -1,0 +1,62 @@
+<h1>Radio Button Sample</h1>
+<div>
+    <input type="radio" name="group-1" value="사과" checked />사과
+</div>
+<div>
+    <input type="radio" name="group-1" value="바나나" />바나나
+</div>
+<div>
+    <input type="radio" name="group-1" value="포도" />포도
+</div>
+
+<button id="btn-select">확인</button>
+<p>
+    결과: <span id="output-result"></span>
+</p>
+
+<div>
+    <input type="radio" name="group-2" value="프로미스나인" />프로미스나인
+</div>
+<div>
+    <input type="radio" name="group-2" value="에스파" />에스파
+</div>
+<div>
+    <input type="radio" name="group-2" value="아이브" />아이브
+</div>
+<div>
+    <input type="radio" name="group-2" value="블랙핑크" />블랙핑크
+</div>
+<button id="btn-select-2">확인</button>
+<p>
+    결과: <span id="output-result-2"></span>
+</p>
+
+<script>
+    // First group (fruit selection)
+    var btnSelect = document.getElementById("btn-select");
+    var outputResult = document.getElementById("output-result");
+
+    btnSelect.addEventListener('click', () => {
+        var selectItem = document.querySelector("input[name=group-1]:checked");
+        console.log(selectItem);
+        if (selectItem) {
+            outputResult.innerText = 'select ' + selectItem.value;
+        } else {
+            outputResult.innerText = 'No fruit selected';
+        }
+    });
+
+    // Second group (idol selection)
+    var btnSelect2 = document.getElementById("btn-select-2");
+    var outputResult2 = document.getElementById("output-result-2");
+
+    btnSelect2.addEventListener('click', () => {
+        var selectItem2 = document.querySelector("input[name=group-2]:checked");
+        console.log(selectItem2);
+        if (selectItem2) {
+            outputResult2.innerText = 'select ' + selectItem2.value;
+        } else {
+            outputResult2.innerText = 'No idol selected';
+        }
+    });
+</script>
