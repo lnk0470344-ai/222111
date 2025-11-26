@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Dungeon and Dragons</title>
+    <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: blue;
+            color: white;
+            font-family: 'MedievalSharp', cursive;
+            text-align: center;
+            margin-top: 120px;
+            transition: all 0.3s ease;
+        }
+        h1 {
+            font-size: 48px;
+            margin-bottom: 40px;
+        }
+        .menu {
+            font-size: 22px;
+            line-height: 2.2;
+        }
+        .clickable {
+            cursor: pointer;
+            text-decoration: underline;
+        }
+        .clickable:hover {
+            color: #ffff00;
+        }
+        .top {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 13px;
+        }
+        .bottom {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            font-size: 13px;
+        }
+        input[type=range] {
+            vertical-align: middle;
+        }
+        select {
+            font-family: 'MedievalSharp', cursive;
+            background: #00008b;
+            color: white;
+            border: 1px solid white;
+            padding: 5px;
+        }
+    </style>
+    <script>
+        function showOptions() {
+            document.getElementById('main-menu').style.display = 'none';
+            document.getElementById('options-menu').style.display = 'block';
+        }
+
+        function showMainMenu() {
+            document.getElementById('options-menu').style.display = 'none';
+            document.getElementById('main-menu').style.display = 'block';
+        }
+
+        function changeRatio(sel) {
+            alert(sel.value + " 비율로 변경되었습니다!");
+        }
+    </script>
+</head>
+<body>
+    <div class="top">version 1.1</div>
+
+    <h1>Dungeon and Dragons</h1>
+
+    <div id="main-menu" class="menu">
+        <span class="clickable">게임 시작</span><br>
+        <span class="clickable">게임 로드</span><br>
+        <span class="clickable" onclick="showOptions()">옵션</span>
+    </div>
+
+    <div id="options-menu" class="menu" style="display: none;">
+        음량 조절: <input type="range" min="0" max="100" value="50"><br>
+        
+        화면 비율: 
+        <select onchange="changeRatio(this)">
+            <option value="16:9">16:9</option>
+            <option value="4:3">4:3</option>
+            <option value="Windowed">창모드</option>
+        </select><br>
+        
+        <br>
+        <span class="clickable" onclick="showMainMenu()">[ 뒤로 가기 ]</span>
+    </div>
+
+    <div class="bottom">copyright 10454,gbox3d</div>
+</body>
+</html>

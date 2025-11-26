@@ -1,0 +1,25 @@
+<h1>볼륨을 높여요</h1>
+
+<div>
+    <input type="range" min="0" max="100" value="50" id="range-vol">
+    : <span id="current-vol">50</span>
+</div>
+
+<button id="btn-submit">제출</button>
+
+<p id="txt-result"></p>
+
+<script>
+    const rangeVol = document.getElementById('range-vol');
+    const currentVol = document.getElementById('current-vol');
+    const btnSubmit = document.getElementById('btn-submit');
+    const txtResult = document.getElementById('txt-result');
+
+    rangeVol.addEventListener('input', () => {
+        currentVol.textContent = rangeVol.value;
+    });
+
+    btnSubmit.addEventListener('click', () => {
+        txtResult.textContent = `선택한 볼륨: ${rangeVol.value}`;
+    });
+</script>
